@@ -4,7 +4,7 @@
   "homepage": "https://github.com/tourbuzz/angular-promise-monitor",
   "authors": [
     "Scott Davis <me@sdavis.info>",
-   "Alan Pinstein <alan@tourbuzz.net" 
+    "Alan Pinstein <alan@tourbuzz.net"
   ],
   "description": "Monitor the progress of AngularJs promises",
   "main": "dist/promiseMonitor.js",
@@ -19,5 +19,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "~1.2.14"
+  }
 }
