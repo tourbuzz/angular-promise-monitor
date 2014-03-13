@@ -1,0 +1,23 @@
+{
+  "name": "angular-promise-monitor",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tourbuzz/angular-promise-monitor",
+  "authors": [
+    "Scott Davis <me@sdavis.info>",
+   "Alan Pinstein <alan@tourbuzz.net" 
+  ],
+  "description": "Monitor the progress of AngularJs promises",
+  "main": "dist/promiseMonitor.js",
+  "keywords": [
+    "promise",
+    "monitor"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
