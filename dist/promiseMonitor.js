@@ -34,38 +34,4 @@ angular.module('promiseMonitor', []).factory('$promiseMonitor', [
       }
     };
   }
-]).directive('promiseMonitorEnabled', [
-  '$promiseMonitor', function($promiseMonitor) {
-    return {
-      restrict: 'A',
-      link: function(scope, elem, attrs) {
-        var promiseScope;
-        promiseScope = attrs.promiseMonitorScope != null ? attrs.promiseMonitorScope : 'default';
-        return $promiseMonitor.promise(promiseMonitorScope).then(null, null, function(outstandingCount) {
-          if (outstandingCount) {
-            return attrs.disabled = true;
-          } else {
-            return attrs.disabled = false;
-          }
-        });
-      }
-    };
-  }
-]).directive('promiseMonitorStatus', [
-  '$promiseMonitor', function($promiseMonitor) {
-    return {
-      restrict: 'A',
-      link: function(scope, elem, attrs) {
-        var promiseScope;
-        promiseScope = attrs.promiseMonitorScope != null ? attrs.promiseMonitorScope : 'default';
-        return $promiseMonitor.promise(promiseScope).then(null, null, function(outstandingCount) {
-          if (outstandingCount) {
-            return elem.html("" + outstandingCount + " jobs pending");
-          } else {
-            return elem.html('');
-          }
-        });
-      }
-    };
-  }
 ]);

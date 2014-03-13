@@ -22,36 +22,3 @@ angular.module('promiseMonitor', [])
         monitorDefered.promise
     }
   ])
-  .directive('promiseMonitorEnabled', ['$promiseMonitor', ($promiseMonitor) ->
-    {
-      restrict: 'A',
-      link: (scope, elem, attrs) ->
-        promiseScope = if attrs.promiseMonitorScope?
-          attrs.promiseMonitorScope
-        else 'default'
-        $promiseMonitor.promise(promiseMonitorScope).then(null, null, (outstandingCount) ->
-          if outstandingCount
-            attrs.disabled = true
-          else
-            attrs.disabled = false
-        )
-
-
-    }
-  ])
-  .directive('promiseMonitorStatus', ['$promiseMonitor', ($promiseMonitor) ->
-    {
-      restrict: 'A',
-      link: (scope, elem, attrs) ->
-        promiseScope = if attrs.promiseMonitorScope?
-          attrs.promiseMonitorScope
-        else 'default'
-        $promiseMonitor.promise(promiseScope).then(null, null, (outstandingCount)->
-         if outstandingCount
-          elem.html "#{outstandingCount} jobs pending"
-         else
-           elem.html ''
-        )
-
-    }
-  ])
