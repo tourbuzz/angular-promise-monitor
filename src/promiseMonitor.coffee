@@ -9,7 +9,7 @@ angular.module('promiseMonitor', [])
         promises[promiseScope] ||= []
         promises[promiseScope].push(p)
         notify(promiseScope)
-        promise["finally"](->
+        p["finally"](->
           promises[promiseScope]
             .splice(promises[promiseScope].indexOf(p), 1)
           notify(promiseScope)
