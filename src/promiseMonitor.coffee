@@ -5,7 +5,7 @@ angular.module('promiseMonitor', [])
     notify = (promiseScope='default') ->
       monitorDefered.notify(promises[promiseScope].length)
     {
-      regiesterPromise: (p, promiseScope='default') ->
+      registerPromise: (p, promiseScope='default') ->
         promises[promiseScope] ||= []
         promises[promiseScope].push(p)
         notify(promiseScope)

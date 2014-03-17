@@ -11,7 +11,7 @@ angular.module('promiseMonitor', []).factory('$promiseMonitor', [
       return monitorDefered.notify(promises[promiseScope].length);
     };
     return {
-      regiesterPromise: function(p, promiseScope) {
+      registerPromise: function(p, promiseScope) {
         if (promiseScope == null) {
           promiseScope = 'default';
         }
