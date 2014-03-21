@@ -18,7 +18,7 @@ angular.module('promiseMonitor', []).factory('$promiseMonitor', [
         promises[promiseScope] || (promises[promiseScope] = []);
         promises[promiseScope].push(p);
         notify(promiseScope);
-        return promise["finally"](function() {
+        return p["finally"](function() {
           promises[promiseScope].splice(promises[promiseScope].indexOf(p), 1);
           return notify(promiseScope);
         });
